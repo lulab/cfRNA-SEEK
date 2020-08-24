@@ -1,5 +1,5 @@
 # cfRNA-SEEK
-## Scripts for cell-free RNA Sequencing Data Analysis
+## Scripts for Cell-free RNA Sequencing Data Analysis
 
 - This repo contains several scripts for cfRNA sequencing data analysis, includes:
   - SMART-total data processing: see 
