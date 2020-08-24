@@ -9,7 +9,7 @@ cutadapt --pair-filter any  -q 30,30 \
 ## 1.2 Trim GC oligo introduced in template switching
 - For reverse stranded (first strand), set strandness to reverse, for forward strand (second strand), set strandness to forward
 - Read pairs shorter than 30 nt are discarded
-- Input should be compressed by gzip, named as '{sample_id}_{1,2}.fastq.gz'
+- Input should be compressed by *gzip*, named as `{sample_id}_{1,2}.fastq.gz`
 ```bash
 python bin/trimGC.py -s {strandness} -o {output_preffix} -i {input_preffix} > {log} 2>&1
 ```
@@ -48,8 +48,8 @@ bash bin/getIntron-spanning.sh {inbam} {outbam} > {log} 2>&1
 ```
 
 ## 3.1 Assign reads in genome bam file to certain genomic regions
-- The priority of the assignment is defined in config/priority.txt
-- bed files corresponding to regions in config/priority.txt should be present in {beddir}, named as {regionsName}.bed, in bed6 format
+- The priority of the assignment is defined in `config/priority.txt`
+- bed files corresponding to regions in `config/priority.txt` should be present in {beddir}, named as {region}.bed, in bed6 format
 ```bash
 # For forward stranded library, '-S' in bedtools coverage -counts -S -sorted -a - -b ${beddir}/${region}.bed should be replaced by '-s'
 bash bin/sequential.assign.long.sh {bam} {outdir} {beddir}
@@ -130,9 +130,9 @@ python bin/summarize-kraken.py -i {report} -l {taxoLevel} -o {output}
 
 ```
 ## 5.1 Filtering: 
-- See bin/filter.py
+- See `bin/filter.py`
 
 ## 5.2 Differential analysis:
-- For counts data ( expression counts and kraken2 counts ), see default method (edger-glmlrt) in bin/differential_expression.R
-- For analysis of ratio based data (psi, PDUI and editing level), see bin/ranksum.py
+- For counts data ( expression counts and kraken2 counts ), see default method (edger-glmlrt) in `bin/differential_expression.R`
+- For analysis of ratio based data (psi, PDUI and editing level), see `bin/ranksum.py`
 

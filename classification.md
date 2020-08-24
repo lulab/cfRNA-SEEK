@@ -1,5 +1,5 @@
 # Scripts for Classification
-## Normalization / removing unwanted variations for gene expression counts and metagenomics counts
+## Normalization / adjusting unwanted variations for gene expression counts and metagenomic counts
 ```bash
 ## counts: input count matrix
 ## classes: metadata
@@ -22,17 +22,14 @@ python bin/FS.py --input ${input} --pos metadata/CRC-dis.txt  --neg metadata/NC-
 python bin/test-classification.py  --input ${input} --pos CRC --neg NC --selector ${selector} --classifier ${clf} --auroc performance/${selector}:${clf}.txt --labels ${labels} 
 ```
 
-## Binary feature selection and classification
-```bash
-# Cancer vs. HD classification
-# see bin/run-variation-cancer-NC.sh and bin/run-expression-cancer-NC.sh
- 
-# One vs. rest classification for different cancers
-# see bin/run-OvR5.sh
+## Binary feature selection and performance evaluation
 
-# Combine selected features by mixing features and logistic regression
-# see bin/get-probability.sh and bin/probability-integration.py
-```
+- `bin/classification.py` was used for identifying cancer relevant features. Feature selection was integrated in a cross validation procedure on discovery set. By default,  this each cross validation run, distinguishable features in two groups were identified by ranksum test filtering, followed by SURF feature selection. The most frequently selected features were finally reported. Additional constraints, such as the trend of alterations, or the initial searching space, can be specified.
+- For cancer vs. HD classification, see `bin/run-variation-cancer-NC.sh` and `bin/run-expression-cancer-NC.sh`
+- For one vs. rest classification for different cancers, see `bin/run-OvR5.sh`
+- For performance evaluation of combining selected features (mixing features or logistic regression), see `bin/get-probability.sh` and `bin/probability-integration.py`
 
-## Multiclass classification
-- See bin/multi-class.py
+
+
+## Multi-class classification
+- See `bin/multi-class.py` for performance evaluation of multi-class classification between different cancer types. 
