@@ -1,5 +1,5 @@
-# CfRNA-SEEK
-## Scripts for cfRNA Sequencing Data Analysis
+# cfRNA-SEEK
+## Scripts for cell-free RNA Sequencing Data Analysis
 
 - This repo contains several scripts for cfRNA sequencing data analysis, includes:
   - SMART-total data processing: see 
@@ -9,3 +9,4 @@
   - Scripts for feature selection and classification: see
     - classification.md 
 
+![cfRNA-SEEK Pipeline](cfRNA-SEEK.png)
