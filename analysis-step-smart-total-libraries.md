@@ -1,4 +1,4 @@
-# SMART-total Data Analysis
+# SMART-total cfRNA-seq Data Analysis
 ## 1.1 Trim adaptor 
 ```bash
 cutadapt --pair-filter any  -q 30,30 \
