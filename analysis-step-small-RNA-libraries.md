@@ -1,4 +1,4 @@
-# Small RNA-seq Data Analysis
+# Small cfRNA-seq Data Analysis
 ## 1. Trim adaptor
 ```bash
 ## For NEB libraries:
