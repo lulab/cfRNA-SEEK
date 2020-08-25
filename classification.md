@@ -1,5 +1,5 @@
 # Scripts for Classification
-## Normalization / adjusting unwanted variations for gene expression counts and metagenomic counts
+## Normalization, Batch correction and Data Clean
 ```bash
 ## counts: input count matrix
 ## classes: metadata
