@@ -19,6 +19,7 @@ To identify cancer relevant features and evaluate the classification performance
 
 To analyze small cfRNA-seq data, see [analysis-step-small-RNA-libraries.md](analysis-step-small-RNA-libraries.md).
 
+---
 
 > [Dependencies]:
 >
@@ -29,9 +30,8 @@ To analyze small cfRNA-seq data, see [analysis-step-small-RNA-libraries.md](anal
 
 
 
-
-
-![cfRNA-SEEK Pipeline](cfRNA-SEEK.png)
 > Illustration of cfRNA-SEEK work flow
+![cfRNA-SEEK Pipeline](cfRNA-SEEK.png)
+
 
 
