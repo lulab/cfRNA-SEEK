@@ -13,7 +13,7 @@ To quantify different RNA variations for human genome, as well as the abundance 
 
 - **Feature Selection**
 
-To identify cancer relevant features and evaluate the classification performance, see [classification.md](classification.md).
+To nomalize data matrix, remove batch effect, identify cancer relevant features and evaluate the classification performance, see [classification.md](classification.md).
 
 - **Small cfRNA-seq Reads Processing**
 
