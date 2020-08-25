@@ -1,5 +1,5 @@
 # Scripts for Classification
-## Normalization, Batch correction and Data Clean
+## Normalization, batch correction and data clean
 ```bash
 ## counts: input count matrix
 ## classes: metadata
