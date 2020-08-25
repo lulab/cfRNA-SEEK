@@ -27,6 +27,8 @@ To analyze small cfRNA-seq data, see [analysis-step-small-RNA-libraries.md](anal
 > Customized scripts are available in [bin/](https://github.com/lulab/cfRNA-SEEK/blob/master/bin).
 >
 > Adapter trimming was performed using cutadapt (version 2.3). Reads alignment was performed using STAR (version 2.5.3a_modified) and bowtie2 (version 2.3.5). Duplications in bam files are removed using MarkDuplicates in picard toolkit (version 2.20.0). bedtools (version 2.28.0) was used to assign mapped reads to different genomic regions. Count matrix was generated using featureCounts (version 1.6.2) . rMATs (version 4.0.2),  DaPar (version 0.91) and RNAeditor (version 1.0) was used for RNA alternative splicing, APA and RNA editing analysis, respectively. edgeR (version 3.24.3), RUVSeq (version 1.6.1) were used for expression data preprocessing. Differential analysis was performed using edgeR (version 3.24.3) and python package scipy.stats (version 1.4.1). Python packages scipy.stats (version 1.4.1), sklearn (version 0.22.2), skrebate (version 0.6) and imblearn (version 0.6.2) were used for feature selection, classification and performance evaluation. 
+>
+> The raw RNA-seq reads can be acquired using illumina's bcl2fastq software. Fragment sizes in RNA-seq libraries can be acquired using Agilent Bioanalyzer 2100 TapeStation analysis software.
 
 
 
