@@ -1,4 +1,6 @@
 #! /usr/bin/env python
+# Source https://github.com/lulab/exSEEK/blob/master/exseek/scripts/count_reads.py
+
 import argparse, sys, os, errno
 import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] [%(levelname)s] %(name)s: %(message)s')

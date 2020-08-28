@@ -1,5 +1,5 @@
 #! /usr/bin/env Rscript
-
+# Source: https://github.com/lulab/exSEEK/blob/master/exseek/scripts/differential_expression.R
 suppressPackageStartupMessages(library(argparse))
 parser <- ArgumentParser(description='Differential expression')
 parser$add_argument('-i', '--matrix', type='character', required=TRUE,
