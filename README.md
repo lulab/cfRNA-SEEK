@@ -9,7 +9,7 @@ We also provide [snakemake files](https://github.com/lulab/cfRNA-SEEK/blob/maste
 
 - **SMART-total cfRNA-seq Reads Processing**
 
-To quantify different RNA variations for human genome, as well as the abundance of different microbial taxos, see [analysis-step-smart-total-libraries.md](analysis-step-smart-total-libraries.md).
+To quantify different RNA variations for human genome, as well as the abundance of different microbial taxa, see [analysis-step-smart-total-libraries.md](analysis-step-smart-total-libraries.md).
 
 - **Feature Selection**
 
