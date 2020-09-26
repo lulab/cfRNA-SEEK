@@ -1,0 +1,1 @@
+lncRNA  mRNA snoRNA snRNA srpRNA tRNA tucpRNA Y_RNA pseudogene exon intron antisense promoter enhancer repeats
