@@ -2,11 +2,11 @@
 ## 1. Trim adaptor
 ```bash
 ## For NEB libraries:
-cutadapt AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -m 16 --trim-n -q 30 \
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -m 16 --trim-n -q 30 \
 -o >(pigz -c -p {threads} > {trimmed}) {input} > {log} 2>&1
 
 ## For smart libraries:
-cutadapt AAAAAAAAAAA GGGGG -m 16 --trim-n -q 30 \
+cutadapt -a AAAAAAAAAAA -g GGGGG -m 16 --trim-n -q 30 \
 -o >(pigz -c -p {threads} > {trimmed}) {input} > {log} 2>&1
 
 ```
