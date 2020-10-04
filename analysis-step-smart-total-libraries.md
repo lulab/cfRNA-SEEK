@@ -2,7 +2,7 @@
 ## 1.1 Trim adaptor 
 ```bash
 cutadapt --pair-filter any  -q 30,30 \
-            AGATCGGAAGAGCACACGTCTGAACTCCAGTCA AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
+            -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
             --trim-n -m 16  -o >(gzip -c > {output.fastq1}) -p >(gzip -c > {output.fastq2}) \
             {input.fastq1} {input.fastq2} > {log} 2>&1
 ```
