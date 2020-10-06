@@ -1,5 +1,5 @@
 from BalancedBinaryClassifier import *
-from utils import *
+from fsutils import *
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV,StratifiedShuffleSplit,cross_validate,StratifiedKFold
 import argparse

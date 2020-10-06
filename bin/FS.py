@@ -2,7 +2,7 @@ import argparse
 from sklearn.utils import resample
 from sklearn.model_selection import StratifiedShuffleSplit
 from tqdm import tqdm
-from utils import *
+from fsutils import *
 
 def overlap(x,y,n):
     xy = set(x).intersection(set(y))
