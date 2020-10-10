@@ -107,13 +107,13 @@ python  bin/parseDapar.py -i {input} -c {config} -l {long} -s {short} -p {PDUI}
 
 # Calculate detection recurrency for each editing sites:  bin/recurrent-editing.py
 
-# Filter intergenic editing sites: get-intragene-editing-sites.sh
+# Filter intergenic editing sites: bin/get-intragene-editing-sites.sh
 
 ## Calculate coverage for each sample at recurrently edited sites, include samples which no editing events were reported by RNAEditor
 samtools mpileup -l  editing-sites-pos-list.txt -o ${output} --reference ${ref} ${bam}
 
 # Parse pileup result (get reads number support editing/support not editing)
-python bin/parse-pileup.py -i {pileup} -o {coverage}
+python bin/cal-coverage.py -i {pileup} -o {coverage}
 
 # Summarize the coverage by genomic positions: bin/summarize-editing-coverage.py
 
@@ -126,13 +126,51 @@ python bin/parse-pileup.py -i {pileup} -o {coverage}
 kraken2 --db {kraken2db}  --unclassified-out {outprefix}  --report {report} --paired --use-names {unmapped_1} {unmapped_2}
 
 ## Summarize kraken2 result
+## Genus level data was used for classification 
 python bin/summarize-kraken.py -i {report} -l {taxoLevel} -o {output}
 
 ```
 ## 5.1 Filtering
 - See `bin/filter.py`
 
+- Gene expression data: retained genes with CPM > 2 for more than 50% of samples in at least one class
+
+  ```bash
+  bin/filter.py -i {input} -o {output} --stratify metadata/sample_classes.txt --proportion 0.5 --stratify_key label --threshold 2 --pass_gene_ids  {detected_gene} --method by_value
+  ```
+
+- PSI scores and PDUI scores: in each class, the values of more than 80% of samples should not be null
+
+  ```bash
+  python bin/filter.py --input {input} -o {output} --stratify metadata/sample_classes.txt --stratify_key label --collapse intersection --pass_gene_ids passed-ids.txt --proportion 0.8 --method by_na
+  ```
+
+- RNA editing level: genes with more than 50% of samples with fewer than 6
+  reads supporting the editing level calculation were filtered out.
+  
+  ```bash
+  bin/filter.py --input {coverage-by-gene} -o {coverage-by-gene-filtered} --stratify metadata/sample_classes.txt --stratify_key label --collapse intersection --pass_gene_ids {gene-passed-filter} --threshold 6 --proportion 0.5 --method by_value
+  ```
+
 ## 5.2 Differential analysis:
 - For counts data ( expression counts and kraken2 counts ), see default method (edger-glmlrt) in `bin/differential_expression.R`
+
+  - --positive-ids/--negative-ids: path of file contain sample ids, one id per line
+
+  ```bash
+  Rscript bin/differential_expression.R \
+  -i {input}   \
+  --method edger_glmlrt \
+  --positive-ids {pos-ids} \
+  --negative-ids {neg-ids} \
+  -o {output}
+  ```
+
 - For analysis of ratio based data (psi, PDUI and editing level), see `bin/ranksum.py`
+
+  ```bash
+  python bin/ranksum.py --input {matrix} --output {diff-table} --pos_ids {pos-ids} --neg_ids {neg-ids} 
+  ```
+
+  
 
