@@ -18,7 +18,7 @@ python bin/trimGC.py -s {strandness} -o {output_preffix} -i {input_preffix} > {l
 - Sequentially align reads to spikeIn,UniVec,rRNA,hg38,and circRNA using the following command
   - For spikeIn,UniVec,rRNA,and circRNA alignment, set seedPerWindowNmax to 20
   - For hg38 alignment, set seedPerWindowNmax to 50
-  - Note unmapped reads of STAR 2.5.3a\_modified may out of order in multi-thread alignment (https://github.com/alexdobin/STAR/issues/222), the latest version of STAR is recommended. Alternatively, unmapped fastq files should be repaired before downstream analysis, or the alignment rate could be extremely low.
+  - Note unmapped reads of STAR 2.5.4a (also called STAR 2.5.3a\_modified) may out of order in multi-thread alignment (https://github.com/alexdobin/STAR/issues/222), the latest version of STAR is recommended. Alternatively, unmapped fastq files should be repaired (using repair.sh in bbmap suite for example https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/repair-guide/) before downstream analysis, or the alignment rate could be extremely low.
 ```bash
 STAR --genomeDir {sequenceIndex} \
             --readFilesIn {input.reads1} {input.reads2} \
