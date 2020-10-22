@@ -26,7 +26,7 @@ To analyze small cfRNA-seq data, see [analysis-step-small-RNA-libraries.md](anal
   | program  | version | purpose                               |
   | -------- | ------- | ------------------------------------- |
   | cutadapt | 2.3     | Trim adaptor and low quality sequence |
-  | STAR     | 2.5.3a_modified |Reads alignment|
+  | STAR     | STAR-2.5.4a |Reads alignment|
   | bowtie2  | 2.3.5 | Reads alignment |
   | MarkDuplicates (picard toolkit)|2.20.0|Duplication removal|
   | samtools | 1.9 | Manipulation of bam file, quanltification of editing level |
