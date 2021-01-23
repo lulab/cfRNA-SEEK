@@ -16,7 +16,7 @@ cutadapt -a AAAAAAAAAAA -g GGGGG -m 16 --trim-n -q 30 \
 ```bash
 ## See snakefiles/sequential_mapping.snakemake for details in sequential alignment
 pigz -d -c {inputFastq} \
-        | bowtie2 -f -p 1 --norc --sensitive --no-unal \
+        | bowtie2 -p 1 --norc --sensitive --no-unal \
             --un-gz {unmappedFastq} -x {sequenceIndex} - -S - \
         | samtools view -b -o {bam}
 ```
