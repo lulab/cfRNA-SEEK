@@ -12,7 +12,7 @@ cutadapt -a AAAAAAAAAAA -g GGGGG -m 16 --trim-n -q 30 \
 ```
 ## 2. Sequence alignment
 - Priority of sequential alignment
-- spikein, univec, rRNA, lncRNA, miRNA, mRNA, piRNA, snoRNA, snRNA, srpRNA, tRNA, tucpRNA, Y RNA, circRNA, genome
+- spikein, univec, rRNA, lncRNA, miRNA, mRNA, piRNA, snoRNA, snRNA, srpRNA, tRNA, tucpRNA, Y RNA, genome, circRNA
 ```bash
 ## See snakefiles/sequential_mapping.snakemake for details in sequential alignment
 pigz -d -c {inputFastq} \
