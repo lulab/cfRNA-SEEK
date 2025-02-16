@@ -23,5 +23,4 @@ sortmerna --paired_in -ref rRNA.fasta --idx-dir sortmerna-index --reads unmapped
 bowtie2 --no-unal -p 4 -1 ${fastq_1} -2 ${fastq_2}  --un-conc-gz output/rRNA/unmapped/${sample_id}_%.fastq.gz --no-discordant --end-to-end -x rRNA/bowtie2-index/rRNA | samtools view -b > ${output}
 
 - count rRNA reads
-
 bin/count-rRNA.py -m 0 -b $bam -s $lib -c output/rRNA/count/control-MAPQ0/${sample_id}.txt --stats output/rRNA/count/control-MAPQ0/${sample_id}.stat
