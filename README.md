@@ -11,6 +11,11 @@ We also provide [snakemake files](https://github.com/lulab/cfRNA-SEEK/blob/maste
 
 To quantify different RNA variations for human genome, as well as the abundance of different microbial taxa, see [analysis-step-smart-total-libraries.md](analysis-step-smart-total-libraries.md).
 
+- **Analysis of unmapped reads**
+
+To analysis unmapped reads, see [microbe-analysis.md](microbe-analysis.md)
+
+
 - **Feature Selection**
 
 To nomalize data matrix, remove batch effect, identify cancer relevant features and evaluate the classification performance, see [classification.md](classification.md).
