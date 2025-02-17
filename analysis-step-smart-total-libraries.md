@@ -8,6 +8,7 @@ cutadapt --pair-filter any  -q 30,30 \
 ```
 ## 1.2 Trim GC oligo introduced in template switching
 - For reverse stranded (first strand) libraries, set strandness to reverse, for forward stranded (second strand) libraries, set strandness to forward
+- Take a look at `metadata.txt` for strand information
 - Read pairs shorter than 30 nt are discarded
 - Input should be compressed by gzip, named as `{sample_id}_{1,2}.fastq.gz`
 ```bash

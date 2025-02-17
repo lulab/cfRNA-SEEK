@@ -29,5 +29,6 @@ bowtie2 --no-unal -p 4 -1 ${fastq_1} -2 ${fastq_2}  --un-conc-gz output/rRNA/unm
 
 - count rRNA reads
 ```{bash}
+# -s means strand of the RNA-seq library. Take a look at metadata.txt
 bin/count-rRNA.py -m 0 -b $bam -s $lib -c output/rRNA/count/control-MAPQ0/${sample_id}.txt --stats output/rRNA/count/control-MAPQ0/${sample_id}.stat
 ```
